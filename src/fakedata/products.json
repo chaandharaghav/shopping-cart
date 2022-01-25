@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "name": "Red velvet",
+    "gender": "F",
+    "price": "220",
+    "currency": "INR"
+  },
+  {
+    "id": "2",
+    "name": "Grey Star",
+    "gender": "F",
+    "price": "350",
+    "currency": "INR"
+  },
+  {
+    "id": "3",
+    "name": "Red devil",
+    "gender": "M",
+    "price": "430",
+    "currency": "INR"
+  },
+  {
+    "id": "4",
+    "name": "Dark cream",
+    "gender": "F",
+    "price": "270",
+    "currency": "INR"
+  },
+  {
+    "id": "5",
+    "name": "Racer round neck",
+    "gender": "N",
+    "price": "530",
+    "currency": "INR"
+  },
+  {
+    "id": "6",
+    "name": "Green V neck",
+    "gender": "F",
+    "price": "399",
+    "currency": "INR"
+  },
+  {
+    "id": "7",
+    "name": "Diamond brown",
+    "gender": "M",
+    "price": "410",
+    "currency": "INR"
+  },
+  {
+    "id": "8",
+    "name": "Simple grey",
+    "gender": "N",
+    "price": "590",
+    "currency": "INR"
+  },
+  {
+    "id": "9",
+    "name": "Multi brown",
+    "gender": "F",
+    "price": "270",
+    "currency": "INR"
+  },
+  {
+    "id": "10",
+    "name": "Royal white",
+    "gender": "N",
+    "price": "730",
+    "currency": "INR"
+  }
+]
