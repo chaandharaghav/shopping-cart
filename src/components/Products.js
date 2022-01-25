@@ -5,6 +5,8 @@ import productsjson from '../fakedata/products.json';
 
 import ProductCard from './ProductCard';
 
+import '../styles/Products.css';
+
 function Products(props) {
   const [products, setProducts] = useState([]);
 
@@ -13,10 +15,13 @@ function Products(props) {
   }, []);
 
   return (
-    <div id="products">
-      {products.map((product) => (
-        <ProductCard details={product} key={product.id} />
-      ))}
+    <div id="products-page">
+      <h2>Our Products</h2>
+      <div id="products-list">
+        {products.map((product) => (
+          <ProductCard details={product} key={product.id} />
+        ))}
+      </div>
     </div>
   );
 }
