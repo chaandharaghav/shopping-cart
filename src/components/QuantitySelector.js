@@ -1,3 +1,5 @@
+import '../styles/QuantitySelector.css';
+
 function QuantitySelector(props) {
   return (
     <div className="quantity-selector">

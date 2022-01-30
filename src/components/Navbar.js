@@ -9,7 +9,7 @@ function Navbar(props) {
         <h1>{props.brandName}</h1>
         <ul>
           <li>
-            <a href="/home">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
             <a href="/products">Products</a>

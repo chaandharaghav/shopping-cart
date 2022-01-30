@@ -1,0 +1,56 @@
+.dec-btn,
+.inc-btn {
+  border: none;
+  border-radius: 50%;
+}
+
+.dec-btn,
+.inc-btn {
+  height: 25px;
+  width: 25px;
+}
+
+.dec-btn:active {
+  background-color: rgb(250, 148, 148);
+}
+
+.inc-btn:active {
+  background-color: rgb(122, 251, 122);
+}
+
+.dec-btn {
+  background-color: white;
+
+  border: 1px solid rgb(179, 179, 179);
+}
+
+.quantity-selector input {
+  max-width: 40px;
+
+  margin: 0 0.5rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+@media (min-width: 769px) {
+  .dec-btn:hover {
+    background-color: rgb(250, 148, 148);
+  }
+  .inc-btn:hover {
+    background-color: rgb(122, 251, 122);
+  }
+
+  .dec-btn:active,
+  .inc-btn:active {
+    transform: scale(1.2);
+  }
+}

@@ -3,6 +3,7 @@ import '../styles/Cart.css';
 import CartItem from './CartItem';
 
 function Cart(props) {
+  let itemids = [2, 3, 4, 5, 6, 7, 8];
   return (
     <div id="cart-page">
       <div id="cart-outline">
@@ -13,7 +14,9 @@ function Cart(props) {
           </span>
         </div>
         <div id="item-list">
-          <CartItem itemid={2} />
+          {itemids.map((itemid) => (
+            <CartItem itemid={itemid} />
+          ))}
         </div>
         <div id="order-summary"></div>
       </div>
