@@ -9,6 +9,7 @@ function CartItem({
   item,
   handleCartItemDec,
   handleCartItemInc,
+  handleCartItemDelete,
   handleCartItemCountChange,
 }) {
   const productItem =
@@ -28,7 +29,14 @@ function CartItem({
         handleCartItemDec={handleCartItemDec}
         handleCartItemCountChange={handleCartItemCountChange}
       />
-      <button className="remove-item-btn">Remove</button>
+      <button
+        className="remove-item-btn"
+        onClick={() => {
+          handleCartItemDelete(item.id);
+        }}
+      >
+        Remove
+      </button>
     </div>
   );
 }

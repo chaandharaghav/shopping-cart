@@ -88,6 +88,10 @@ function App() {
     setCart(copyCart);
   }
 
+  function handleCartItemDelete(id) {
+    setCart(cart.filter((item) => item.id !== id));
+  }
+
   function findSubTotal() {
     let subTotal = 0;
 
@@ -116,6 +120,7 @@ function App() {
                 handleCartItemDec={handleCartItemDec}
                 handleCartItemInc={handleCartItemInc}
                 handleCartItemCountChange={handleCartItemCountChange}
+                handleCartItemDelete={handleCartItemDelete}
                 findSubTotal={findSubTotal}
               />
             }

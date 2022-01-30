@@ -8,6 +8,7 @@ function Cart({
   handleCartItemInc,
   handleCartItemDec,
   handleCartItemCountChange,
+  handleCartItemDelete,
   findSubTotal,
 }) {
   return (
@@ -26,6 +27,7 @@ function Cart({
                 handleCartItemInc={handleCartItemInc}
                 handleCartItemDec={handleCartItemDec}
                 handleCartItemCountChange={handleCartItemCountChange}
+                handleCartItemDelete={handleCartItemDelete}
               />
             ))
           ) : (
