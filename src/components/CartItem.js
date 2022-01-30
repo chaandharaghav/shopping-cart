@@ -11,8 +11,8 @@ function CartItem({
   handleCartItemInc,
   handleCartItemCountChange,
 }) {
-  // eslint-disable-next-line eqeqeq
   const productItem =
+    // eslint-disable-next-line eqeqeq
     products[products.findIndex((product) => product.id == item.id)]; // double equals because we are using JSON
 
   return (

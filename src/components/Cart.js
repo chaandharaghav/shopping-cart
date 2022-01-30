@@ -8,6 +8,7 @@ function Cart({
   handleCartItemInc,
   handleCartItemDec,
   handleCartItemCountChange,
+  findSubTotal,
 }) {
   return (
     <div id="cart-page">
@@ -35,13 +36,16 @@ function Cart({
           <h2>Order summary</h2>
           <CartSummaryItem
             summaryItemName={'Subtotal'}
-            summaryItemValue={2 * 200}
+            summaryItemValue={findSubTotal()}
           />
           <CartSummaryItem
             summaryItemName={'Delivery charges'}
-            summaryItemValue={20}
+            summaryItemValue={10}
           />
-          <CartSummaryItem summaryItemName={'Total'} summaryItemValue={420} />
+          <CartSummaryItem
+            summaryItemName={'Total'}
+            summaryItemValue={findSubTotal() + 10}
+          />
           <button id="checkout-btn">Checkout</button>
         </div>
       </div>

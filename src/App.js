@@ -9,6 +9,8 @@ import Home from './components/Home';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { useState } from 'react';
 
+import products from './fakedata/products.json';
+
 function App() {
   let [cart, setCart] = useState([]);
 
@@ -86,6 +88,16 @@ function App() {
     setCart(copyCart);
   }
 
+  function findSubTotal() {
+    let subTotal = 0;
+
+    for (let item of cart) {
+      subTotal += item.count * parseInt(products[item.id - 1].price);
+    }
+
+    return subTotal;
+  }
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -104,6 +116,7 @@ function App() {
                 handleCartItemDec={handleCartItemDec}
                 handleCartItemInc={handleCartItemInc}
                 handleCartItemCountChange={handleCartItemCountChange}
+                findSubTotal={findSubTotal}
               />
             }
           />
