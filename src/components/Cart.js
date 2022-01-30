@@ -42,11 +42,11 @@ function Cart({
           />
           <CartSummaryItem
             summaryItemName={'Delivery charges'}
-            summaryItemValue={10}
+            summaryItemValue={findSubTotal() ? 10 : 0}
           />
           <CartSummaryItem
             summaryItemName={'Total'}
-            summaryItemValue={findSubTotal() + 10}
+            summaryItemValue={findSubTotal() + (findSubTotal() ? 10 : 0)}
           />
           <button id="checkout-btn">Checkout</button>
         </div>
