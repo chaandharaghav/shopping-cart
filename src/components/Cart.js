@@ -3,7 +3,12 @@ import '../styles/Cart.css';
 import CartItem from './CartItem';
 import CartSummaryItem from './CartSummaryItem';
 
-function Cart({ cart }) {
+function Cart({
+  cart,
+  handleCartItemInc,
+  handleCartItemDec,
+  handleCartItemCountChange,
+}) {
   return (
     <div id="cart-page">
       <div id="cart-outline">
@@ -13,7 +18,15 @@ function Cart({ cart }) {
         </div>
         <div id="item-list">
           {cart.length ? (
-            cart.map((item) => <CartItem itemid={item.id} key={item.id} />)
+            cart.map((item) => (
+              <CartItem
+                item={item}
+                key={item.id}
+                handleCartItemInc={handleCartItemInc}
+                handleCartItemDec={handleCartItemDec}
+                handleCartItemCountChange={handleCartItemCountChange}
+              />
+            ))
           ) : (
             <div id="no-cart-items">No items in cart</div>
           )}

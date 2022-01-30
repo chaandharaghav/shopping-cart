@@ -17,7 +17,7 @@ function App() {
   }
 
   function isItemInCart(id) {
-    for (let item in cart) {
+    for (let item of cart) {
       if (item.id === id) {
         return true;
       }
@@ -25,7 +25,7 @@ function App() {
     return false;
   }
 
-  function addToCart(id) {
+  function handleAddToCart(id) {
     id = parseInt(id);
     if (isCartEmpty()) {
       setCart([{ id: id, count: 1 }]);
@@ -34,7 +34,7 @@ function App() {
       if (isItemInCart(id)) {
         for (let i = 0; i < copyCart.length; i++) {
           if (copyCart[i].id === id) {
-            copyCart[i].id++;
+            copyCart[i].count++;
             break;
           }
         }
@@ -45,6 +45,47 @@ function App() {
     }
   }
 
+  function handleCartItemInc(id) {
+    const copyCart = [...cart];
+
+    for (let i = 0; i < copyCart.length; i++) {
+      if (copyCart[i].id === id) {
+        copyCart[i].count++;
+        break;
+      }
+    }
+
+    setCart(copyCart);
+  }
+
+  function handleCartItemDec(id) {
+    const copyCart = [...cart];
+
+    for (let i = 0; i < copyCart.length; i++) {
+      if (copyCart[i].id === id) {
+        if (copyCart[i].count > 1) copyCart[i].count--;
+        break;
+      }
+    }
+
+    setCart(copyCart);
+  }
+
+  function handleCartItemCountChange(id, count) {
+    const copyCart = [...cart];
+
+    for (let i = 0; i < copyCart.length; i++) {
+      if (copyCart[i].id === id) {
+        if (count) copyCart[i].count = count;
+        else copyCart[i].count = 1;
+
+        break;
+      }
+    }
+
+    setCart(copyCart);
+  }
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -53,9 +94,19 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route
             path="/products"
-            element={<Products addToCart={addToCart} />}
+            element={<Products handleAddToCart={handleAddToCart} />}
           />
-          <Route path="/cart" element={<Cart cart={cart} />} />
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                cart={cart}
+                handleCartItemDec={handleCartItemDec}
+                handleCartItemInc={handleCartItemInc}
+                handleCartItemCountChange={handleCartItemCountChange}
+              />
+            }
+          />
         </Routes>
       </div>
     </BrowserRouter>

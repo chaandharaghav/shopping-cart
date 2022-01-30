@@ -22,7 +22,7 @@ function Products(props) {
           <ProductCard
             details={product}
             key={product.id}
-            addToCart={props.addToCart}
+            handleAddToCart={props.handleAddToCart}
           />
         ))}
       </div>

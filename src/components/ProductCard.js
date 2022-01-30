@@ -2,7 +2,7 @@ import images from '../fakedata/productimages';
 
 import '../styles/ProductCard.css';
 
-function ProductCard({ addToCart, details }) {
+function ProductCard({ handleAddToCart, details }) {
   const key = details.id;
 
   return (
@@ -12,7 +12,7 @@ function ProductCard({ addToCart, details }) {
       </figure>
       <p className="product-name">{details.name}</p>
       <p className="product-price">${details.price}</p>
-      <button className="add-to-card-btn" onClick={() => addToCart(key)}>
+      <button className="add-to-card-btn" onClick={() => handleAddToCart(key)}>
         Add to cart
       </button>
     </div>
