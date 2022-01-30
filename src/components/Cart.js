@@ -3,26 +3,20 @@ import '../styles/Cart.css';
 import CartItem from './CartItem';
 import CartSummaryItem from './CartSummaryItem';
 
-function Cart({ cartItems }) {
-  cartItems = [
-    { id: 2, count: 3 },
-    { id: 3, count: 3 },
-  ];
-  let itemids = cartItems.map((item) => item.id);
-
+function Cart({ cart }) {
   return (
     <div id="cart-page">
       <div id="cart-outline">
         <div id="cart-header">
           <h2>Your cart</h2>
-          <span>
-            <span id="num-items">{itemids.length}</span> items
-          </span>
+          <span id="num-items">{cart.length} items</span>
         </div>
         <div id="item-list">
-          {itemids.map((itemid) => (
-            <CartItem itemid={itemid} />
-          ))}
+          {cart.length ? (
+            cart.map((item) => <CartItem itemid={item.id} key={item.id} />)
+          ) : (
+            <div id="no-cart-items">No items in cart</div>
+          )}
         </div>
         <div id="order-summary">
           <h2>Order summary</h2>

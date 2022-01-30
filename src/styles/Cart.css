@@ -25,6 +25,12 @@
   font-size: 1.5rem;
 }
 
+#item-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #cart-outline {
   display: flex;
   flex-direction: column;
@@ -64,6 +70,10 @@
 
 #checkout-btn:active {
   transform: scale(1.1);
+}
+
+#no-cart-items {
+  margin: 5rem 0;
 }
 
 @media (min-width: 769px) {
@@ -114,5 +124,9 @@
 @media (min-width: 1025px) {
   #cart-outline {
     padding-bottom: 2rem;
+  }
+
+  #no-cart-items {
+    margin: 0;
   }
 }

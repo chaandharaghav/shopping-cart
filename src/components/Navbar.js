@@ -1,6 +1,7 @@
 import '../styles/Navbar.css';
 
 import shoppingCartIcon from '../icons/cart-shopping-solid.svg';
+import { Link } from 'react-router-dom';
 
 function Navbar(props) {
   return (
@@ -9,15 +10,15 @@ function Navbar(props) {
         <h1>Shoppers</h1>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <Link to={'/'}>Home</Link>
           </li>
           <li>
-            <a href="/products">Products</a>
+            <Link to={'/products'}>Products</Link>
           </li>
           <li>
-            <a href="/cart">
+            <Link to={'/cart'}>
               <img src={shoppingCartIcon} height={18} alt="Shopping cart"></img>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

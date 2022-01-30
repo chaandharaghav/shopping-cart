@@ -2,15 +2,19 @@ import images from '../fakedata/productimages';
 
 import '../styles/ProductCard.css';
 
-function ProductCard(props) {
+function ProductCard({ addToCart, details }) {
+  const key = details.id;
+
   return (
     <div className="product-card">
       <figure>
-        <img src={images[props.details.id - 1]} alt={props.details.name} />
+        <img src={images[details.id - 1]} alt={details.name} />
       </figure>
-      <p className="product-name">{props.details.name}</p>
-      <p className="product-price">${props.details.price}</p>
-      <button className="add-to-card-btn">Add to cart</button>
+      <p className="product-name">{details.name}</p>
+      <p className="product-price">${details.price}</p>
+      <button className="add-to-card-btn" onClick={() => addToCart(key)}>
+        Add to cart
+      </button>
     </div>
   );
 }
