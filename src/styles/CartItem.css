@@ -67,6 +67,21 @@
   background-color: rgb(248, 130, 109);
 }
 
+@media (max-width: 374px) {
+  .cart-item img {
+    width: 80%;
+    height: 80%;
+  }
+
+  .item-name {
+    font-size: 1.2rem;
+  }
+  .remove-item-btn {
+    font-size: 0.7rem;
+    padding: 0;
+  }
+}
+
 @media (min-width: 769px) {
   .remove-item-btn:hover {
     background-color: rgb(241, 150, 134);

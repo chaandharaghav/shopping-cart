@@ -6,7 +6,7 @@ function Navbar(props) {
   return (
     <header>
       <nav id="navbar">
-        <h1>{props.brandName}</h1>
+        <h1>Shoppers</h1>
         <ul>
           <li>
             <a href="/">Home</a>
