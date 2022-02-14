@@ -1,11 +1,24 @@
-import { useSelector } from 'react-redux';
 import '../styles/Cart.css';
+
+import products from '../fakedata/products.json';
 
 import CartItem from './CartItem';
 import CartSummaryItem from './CartSummaryItem';
 
+import { useSelector } from 'react-redux';
+
 function Cart() {
   const cart = useSelector((state) => state.cart.cart);
+
+  function findSubTotal() {
+    let subTotal = 0;
+
+    for (let item of cart) {
+      subTotal += item.count * parseInt(products[item.id - 1].price);
+    }
+
+    return subTotal;
+  }
 
   return (
     <div id="cart-page">
@@ -23,9 +36,18 @@ function Cart() {
         </div>
         <div id="order-summary">
           <h2>Order summary</h2>
-          <CartSummaryItem summaryItemName={'Subtotal'} />
-          <CartSummaryItem summaryItemName={'Delivery charges'} />
-          <CartSummaryItem summaryItemName={'Total'} />
+          <CartSummaryItem
+            summaryItemName={'Subtotal'}
+            summaryItemValue={findSubTotal()}
+          />
+          <CartSummaryItem
+            summaryItemName={'Delivery charges'}
+            summaryItemValue={findSubTotal() ? 10 : 0}
+          />
+          <CartSummaryItem
+            summaryItemName={'Total'}
+            summaryItemValue={findSubTotal() ? findSubTotal() + 10 : 0}
+          />
           <button id="checkout-btn">Checkout</button>
         </div>
       </div>
