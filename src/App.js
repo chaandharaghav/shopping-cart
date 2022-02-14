@@ -11,6 +11,9 @@ import { useState } from 'react';
 
 import products from './fakedata/products.json';
 
+import { Provider } from 'react-redux';
+import store from './app/store';
+
 function App() {
   let [cart, setCart] = useState([]);
 
@@ -104,29 +107,19 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/products"
-            element={<Products handleAddToCart={handleAddToCart} />}
-          />
-          <Route
-            path="/cart"
-            element={
-              <Cart
-                cart={cart}
-                handleCartItemDec={handleCartItemDec}
-                handleCartItemInc={handleCartItemInc}
-                handleCartItemCountChange={handleCartItemCountChange}
-                handleCartItemDelete={handleCartItemDelete}
-                findSubTotal={findSubTotal}
-              />
-            }
-          />
-        </Routes>
-      </div>
+      <Provider store={store}>
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/products"
+              element={<Products handleAddToCart={handleAddToCart} />}
+            />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </div>
+      </Provider>
     </BrowserRouter>
   );
 }

@@ -1,16 +1,12 @@
+import { useSelector } from 'react-redux';
 import '../styles/Cart.css';
 
 import CartItem from './CartItem';
 import CartSummaryItem from './CartSummaryItem';
 
-function Cart({
-  cart,
-  handleCartItemInc,
-  handleCartItemDec,
-  handleCartItemCountChange,
-  handleCartItemDelete,
-  findSubTotal,
-}) {
+function Cart() {
+  const cart = useSelector((state) => state.cart);
+
   return (
     <div id="cart-page">
       <div id="cart-outline">
@@ -20,34 +16,16 @@ function Cart({
         </div>
         <div id="item-list">
           {cart.length ? (
-            cart.map((item) => (
-              <CartItem
-                item={item}
-                key={item.id}
-                handleCartItemInc={handleCartItemInc}
-                handleCartItemDec={handleCartItemDec}
-                handleCartItemCountChange={handleCartItemCountChange}
-                handleCartItemDelete={handleCartItemDelete}
-              />
-            ))
+            cart.map((item) => <CartItem item={item} key={item.id} />)
           ) : (
             <div id="no-cart-items">No items in cart</div>
           )}
         </div>
         <div id="order-summary">
           <h2>Order summary</h2>
-          <CartSummaryItem
-            summaryItemName={'Subtotal'}
-            summaryItemValue={findSubTotal()}
-          />
-          <CartSummaryItem
-            summaryItemName={'Delivery charges'}
-            summaryItemValue={findSubTotal() ? 10 : 0}
-          />
-          <CartSummaryItem
-            summaryItemName={'Total'}
-            summaryItemValue={findSubTotal() + (findSubTotal() ? 10 : 0)}
-          />
+          <CartSummaryItem summaryItemName={'Subtotal'} />
+          <CartSummaryItem summaryItemName={'Delivery charges'} />
+          <CartSummaryItem summaryItemName={'Total'} />
           <button id="checkout-btn">Checkout</button>
         </div>
       </div>
