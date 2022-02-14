@@ -17,21 +17,6 @@ import store from './app/store';
 function App() {
   const [cart, setCart] = useState([]);
 
-  function handleCartItemCountChange(id, count) {
-    const copyCart = [...cart];
-
-    for (let i = 0; i < copyCart.length; i++) {
-      if (copyCart[i].id === id) {
-        if (count) copyCart[i].count = count;
-        else copyCart[i].count = 1;
-
-        break;
-      }
-    }
-
-    setCart(copyCart);
-  }
-
   function handleCartItemDelete(id) {
     setCart(cart.filter((item) => item.id !== id));
   }

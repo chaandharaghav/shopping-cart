@@ -39,6 +39,17 @@ const cartSlice = createSlice({
       let item = state.cart.find((item) => item.id === action.payload);
       if (item.count > 1) item.count--;
     },
+    cartItemCountChange: (state, action) => {
+      let item = state.cart.find((item) => item.id === action.payload.id);
+      if (item.count) item.count = parseInt(action.payload.count);
+      else item.count = 1;
+    },
+    cartItemDelete: (state, action) => {
+      const itemIndex = state.cart.findIndex(
+        (item) => item.id === parseInt(action.payload),
+      );
+      state.cart.splice(itemIndex, 1);
+    },
   },
 });
 
@@ -48,6 +59,8 @@ export const {
   addToCart,
   cartItemInc,
   cartItemDec,
+  cartItemCountChange,
+  cartItemDelete,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

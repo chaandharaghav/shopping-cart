@@ -1,7 +1,11 @@
 import '../styles/QuantitySelector.css';
 
 import { useDispatch } from 'react-redux';
-import { cartItemInc, cartItemDec } from '../slices/cartSlice';
+import {
+  cartItemInc,
+  cartItemDec,
+  cartItemCountChange,
+} from '../slices/cartSlice';
 
 function QuantitySelector({ item }) {
   const dispatch = useDispatch();
@@ -14,7 +18,14 @@ function QuantitySelector({ item }) {
       >
         -
       </button>
-      <input type="number" min={1} value={item.count} />
+      <input
+        type="number"
+        min={1}
+        value={item.count}
+        onChange={(e) =>
+          dispatch(cartItemCountChange({ id: item.id, count: e.target.value }))
+        }
+      />
       <button
         className="inc-btn"
         onClick={() => dispatch(cartItemInc(item.id))}
