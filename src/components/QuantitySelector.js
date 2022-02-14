@@ -1,25 +1,24 @@
 import '../styles/QuantitySelector.css';
 
-function QuantitySelector({
-  item,
-  handleCartItemDec,
-  handleCartItemInc,
-  handleCartItemCountChange,
-}) {
+import { useDispatch } from 'react-redux';
+import { cartItemInc, cartItemDec } from '../slices/cartSlice';
+
+function QuantitySelector({ item }) {
+  const dispatch = useDispatch();
+
   return (
     <div className="quantity-selector">
-      <button className="dec-btn" onClick={() => handleCartItemDec(item.id)}>
+      <button
+        className="dec-btn"
+        onClick={() => dispatch(cartItemDec(item.id))}
+      >
         -
       </button>
-      <input
-        type="number"
-        min={1}
-        value={item.count}
-        onChange={(e) => {
-          handleCartItemCountChange(item.id, e.target.value);
-        }}
-      />
-      <button className="inc-btn" onClick={() => handleCartItemInc(item.id)}>
+      <input type="number" min={1} value={item.count} />
+      <button
+        className="inc-btn"
+        onClick={() => dispatch(cartItemInc(item.id))}
+      >
         +
       </button>
     </div>

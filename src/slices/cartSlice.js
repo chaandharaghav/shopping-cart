@@ -32,9 +32,22 @@ const cartSlice = createSlice({
         }
       }
     },
+    cartItemInc: (state, action) => {
+      state.cart.find((item) => item.id === action.payload).count++;
+    },
+    cartItemDec: (state, action) => {
+      let item = state.cart.find((item) => item.id === action.payload);
+      if (item.count > 1) item.count--;
+    },
   },
 });
 
-export const { isCartEmpty, isItemInCart, addToCart } = cartSlice.actions;
+export const {
+  isCartEmpty,
+  isItemInCart,
+  addToCart,
+  cartItemInc,
+  cartItemDec,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -5,7 +5,7 @@ import CartItem from './CartItem';
 import CartSummaryItem from './CartSummaryItem';
 
 function Cart() {
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.cart.cart);
 
   return (
     <div id="cart-page">
