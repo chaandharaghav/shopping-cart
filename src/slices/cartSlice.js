@@ -41,7 +41,7 @@ const cartSlice = createSlice({
     },
     cartItemCountChange: (state, action) => {
       let item = state.cart.find((item) => item.id === action.payload.id);
-      if (item.count) item.count = parseInt(action.payload.count);
+      if (action.payload.count) item.count = parseInt(action.payload.count);
       else item.count = 1;
     },
     cartItemDelete: (state, action) => {

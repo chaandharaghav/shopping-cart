@@ -14,7 +14,9 @@ function Cart() {
     let subTotal = 0;
 
     for (let item of cart) {
-      subTotal += item.count * parseInt(products[item.id - 1].price);
+      let itemPrice = parseInt(products[item.id - 1].price);
+      let itemCount = Number.isNaN(item.count) ? 1 : item.count;
+      subTotal += itemCount * itemPrice;
     }
 
     return subTotal;
