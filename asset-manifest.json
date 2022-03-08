@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.c38e3f18.chunk.css",
+    "main.js": "/shopping-cart/static/js/main.5fe42701.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.5fe42701.chunk.js.map",
+    "runtime-main.js": "/shopping-cart/static/js/runtime-main.53452762.js",
+    "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.53452762.js.map",
+    "static/js/2.877c647e.chunk.js": "/shopping-cart/static/js/2.877c647e.chunk.js",
+    "static/js/2.877c647e.chunk.js.map": "/shopping-cart/static/js/2.877c647e.chunk.js.map",
+    "static/js/3.1fb75d76.chunk.js": "/shopping-cart/static/js/3.1fb75d76.chunk.js",
+    "static/js/3.1fb75d76.chunk.js.map": "/shopping-cart/static/js/3.1fb75d76.chunk.js.map",
+    "index.html": "/shopping-cart/index.html",
+    "static/css/main.c38e3f18.chunk.css.map": "/shopping-cart/static/css/main.c38e3f18.chunk.css.map",
+    "static/js/2.877c647e.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.877c647e.chunk.js.LICENSE.txt",
+    "static/media/cart-shopping-solid.e8f4ec63.svg": "/shopping-cart/static/media/cart-shopping-solid.e8f4ec63.svg",
+    "static/media/download1.69423379.png": "/shopping-cart/static/media/download1.69423379.png",
+    "static/media/download10.dd16ed4b.png": "/shopping-cart/static/media/download10.dd16ed4b.png",
+    "static/media/download2.892590f1.png": "/shopping-cart/static/media/download2.892590f1.png",
+    "static/media/download3.5290eabf.png": "/shopping-cart/static/media/download3.5290eabf.png",
+    "static/media/download4.05714061.png": "/shopping-cart/static/media/download4.05714061.png",
+    "static/media/download5.035eeeb7.png": "/shopping-cart/static/media/download5.035eeeb7.png",
+    "static/media/download6.b5160066.png": "/shopping-cart/static/media/download6.b5160066.png",
+    "static/media/download7.74a8468e.png": "/shopping-cart/static/media/download7.74a8468e.png",
+    "static/media/download8.b0336ea2.png": "/shopping-cart/static/media/download8.b0336ea2.png",
+    "static/media/download9.f4560837.png": "/shopping-cart/static/media/download9.f4560837.png",
+    "static/media/LandingPage.css": "/shopping-cart/static/media/pexels-photo-10823474-removebg-preview.c555a331.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53452762.js",
+    "static/js/2.877c647e.chunk.js",
+    "static/css/main.c38e3f18.chunk.css",
+    "static/js/main.5fe42701.chunk.js"
+  ]
+}
